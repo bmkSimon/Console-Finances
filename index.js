@@ -96,7 +96,6 @@ for (let i = 0; i < finances.length; i++){
 }
 // Loop through the array and Sums the total value of the monthly profit/loss over the period in question.
 
-
 let aveChange = (sum/(finances.length-1));
 // Finding value of the monthly average change in profit/loss.
 
@@ -111,58 +110,10 @@ console.log("Greatest Decrease in Profits/lossses : $" + maxMonthly[finances.len
 
 //The above code block displays the requested analysis to the console.
 
-/*let noMonths = finances.length;
-let text = "<ul>";
-for (let i = 0; i < noMonths; i++)  {
-  text += "<li>" + finances[i][1] + "</li>";
-}
-text += "</ul>";
+document.getElementById("months").innerHTML = "Total Months : " + finances.length;
+document.getElementById("total").innerHTML = "Total : $" + sum + ".";
+document.getElementById("average").innerHTML = "Average change : $" + aveChange.toFixed(2);
+document.getElementById("highest").innerHTML = "Greatest Increase in Profits/lossses : $" + maxMonthly[0][1] + " in " + maxMonthly[0][0] + ".";
+document.getElementById("lowest").innerHTML = "Greatest Decrease in Profits/lossses : $" + maxMonthly[finances.length-1][1] + " in " + maxMonthly[finances.length-1][0] + ".";
 
-
-
-*/
-/*function minMonthly (finances) {
-  let len =finances.length;
-  let min = Infinity;
-  while (len --) {
-    if (finances[len] < min) {
-      min = finances[len];
-    }
-  }
-  return min;
-  console.log(min);
-}
-*/
-
-//Math.max.apply(null,finances[1]);
-
-/*for (let date of finances) {
-  console.log("Date: " + finances.slice(0));
-}*/
-
-/*const minMonthly = finances.sort((a,b) => a[1] - b[1]);
-console.log(minMonthly[0]);
-*/
-
-//console.log(maxMonthly[0]);
-
-/*let sum = 0;
-for (let profit in finances) {
-  value = finances[[profit][1]];
-}
-*/
-
-
-/*function myArrayMin(finances) {
-  return Math.min(null, finances[i][1]);
-  console.log(myaArrayMin(finances));
-}
-*/
-
-
-/*finances.sort((a,b) => a[1] - b[1]);
-console.log(finances[0][1] + " and " + finances[finances.length-1][1]);
-*/
-
-//finances.sort(function(a,b){return a-b});
-
+//The above code block displays the requested analysis to the browser.
