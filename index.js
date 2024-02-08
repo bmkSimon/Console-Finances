@@ -111,7 +111,6 @@ console.log("Greatest Decrease in Profits/lossses : $" + maxMonthly[finances.len
 
 //The above code block displays the requested analysis to the console.
 
-
 /*let noMonths = finances.length;
 let text = "<ul>";
 for (let i = 0; i < noMonths; i++)  {
