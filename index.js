@@ -87,6 +87,31 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+const maxMonthly = finances.sort((a,b) => b[1] - a[1]);
+// Sort finances array by highest to lowest monthly profit/loss.
+
+let sum = 0;
+for (let i = 0; i < finances.length; i++){
+  sum += finances[i][1];
+}
+// Loop through the array and Sums the total value of the monthly profit/loss over the period in question.
+
+
+let aveChange = (sum/(finances.length-1));
+// Finding value of the monthly average change in profit/loss.
+
+console.log("Financial Analysis");
+console.log("---------------------");
+console.log("Total Months : " + finances.length);
+console.log("Total : $" + sum + ".");
+console.log("Average change : $" + aveChange.toFixed(2)); // used toFixed() to display dollar value to 2 decimal places.
+console.log("Greatest Increase in Profits/lossses : $" + maxMonthly[0][1] + " in " + maxMonthly[0][0] + ".");
+console.log("Greatest Decrease in Profits/lossses : $" + maxMonthly[finances.length-1][1] + " in " + maxMonthly[finances.length-1][0] + ".");
+// this line will display the minimum profit loss by using the last key in the sorted array.
+
+//The above code block displays the requested analysis to the console.
+
+
 /*let noMonths = finances.length;
 let text = "<ul>";
 for (let i = 0; i < noMonths; i++)  {
@@ -94,7 +119,8 @@ for (let i = 0; i < noMonths; i++)  {
 }
 text += "</ul>";
 
-// document.getElementById("finances").innerHTML = text;
+
+
 */
 /*function minMonthly (finances) {
   let len =finances.length;
@@ -118,7 +144,7 @@ text += "</ul>";
 /*const minMonthly = finances.sort((a,b) => a[1] - b[1]);
 console.log(minMonthly[0]);
 */
-const maxMonthly = finances.sort((a,b) => b[1] - a[1]);
+
 //console.log(maxMonthly[0]);
 
 /*let sum = 0;
@@ -141,22 +167,3 @@ console.log(finances[0][1] + " and " + finances[finances.length-1][1]);
 
 //finances.sort(function(a,b){return a-b});
 
-
-
-
-let sum = 0;
-for (let i = 0; i < finances.length; i++){
-  sum += finances[i][1];
-}
-//console.log(sum);
-
-let aveChange = (sum/(finances.length-1));
-
-
-console.log("Financial Analysis");
-console.log("---------------------");
-console.log("Total Months : " + finances.length);
-console.log("Total : $" + sum + ".");
-console.log("Average change : $" + aveChange.toFixed(2));
-console.log("Greatest Increase in Profits/lossses : $" + maxMonthly[0][1] + " in " + maxMonthly[0][0] + ".");
-console.log("Greatest Decrease in Profits/lossses : $" + maxMonthly[finances.length-1][1] + " in " + maxMonthly[finances.length-1][0] + ".");
